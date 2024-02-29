@@ -1,0 +1,11 @@
+﻿{
+  "profiles": {
+    "Game": {
+      "commandName": "Executable",
+      "workingDirectory": "D:/Flax Projects/AcerolaGameJam0/AcerolaGameJam0/AcerolaGJ0",
+      "executablePath": "C:/Program Files (x86)/Flax/Flax_master/Binaries/Editor/Win64/Development/FlaxEditor.exe",
+      "commandLineArgs": "-project \"D:/Flax Projects/AcerolaGameJam0/AcerolaGameJam0/AcerolaGJ0\"",
+      "nativeDebugging": false
+    }
+  }
+}
