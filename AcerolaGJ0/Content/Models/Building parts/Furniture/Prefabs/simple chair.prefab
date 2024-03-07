@@ -1,0 +1,53 @@
+{
+	"ID": "b05d4a94460e49b541999f935e60248b",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "98d593684eb13e5ef2c5f29333d81e63",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "00000000000000000000000000000000",
+		"Name": "simple chair",
+		"Transform": {
+			"Translation": {
+				"X": -600.0,
+				"Y": 250.0,
+				"Z": -120.0
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.4461978077888489,
+				"Z": 0.0,
+				"W": 0.894934356212616
+			}
+		},
+		"Model": "7d1c65474754da5d1f1beea54c6fb43f",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "610fa83d4623f368e54909a6b6a9d723",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "98d593684eb13e5ef2c5f29333d81e63",
+		"Name": "BoxCollider",
+		"Center": {
+			"X": -3.9046630859375,
+			"Y": 57.5863037109375,
+			"Z": -0.102386474609375
+		},
+		"Size": {
+			"X": 48.99786376953125,
+			"Y": 115.17318725585938,
+			"Z": 46.129913330078128
+		}
+	}
+]
+}

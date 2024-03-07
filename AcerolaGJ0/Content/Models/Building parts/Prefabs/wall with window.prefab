@@ -1,0 +1,59 @@
+{
+	"ID": "026bd85c4869273be55f1d90126ecdfa",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "07a47c064e4f8ea98dd9cc9f9f170a30",
+		"TypeName": "FlaxEngine.StaticModel",
+		"Name": "wall with window",
+		"Transform": {
+			"Translation": {
+				"X": 190.0,
+				"Y": 0.0,
+				"Z": -810.0
+			}
+		},
+		"Model": "fedfcbb445fc544b4f9975b593b0daf2",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "7ce2c45b46e6843a3e73659267156378",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "74b6020f4b349b892e8f5ea1e600d407",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "1458f0fc477c42eb9fbfa3ae79ce0dd1",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "68ac97bc403a4bb28e19dea89fedbcf0",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "07a47c064e4f8ea98dd9cc9f9f170a30",
+		"Name": "BoxCollider",
+		"Center": {
+			"X": 0.0,
+			"Y": 125.0,
+			"Z": 0.0
+		},
+		"ContactOffset": 0.0,
+		"Size": {
+			"X": 200.0,
+			"Y": 249.99998474121095,
+			"Z": 20.0
+		}
+	}
+]
+}

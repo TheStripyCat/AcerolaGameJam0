@@ -1,0 +1,37 @@
+{
+	"ID": "cf058707415d28bf0a8b118153c2f151",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "2e4b997b41c5987d2cff98a5369743f9",
+		"TypeName": "FlaxEngine.StaticModel",
+		"Name": "corner wall",
+		"Transform": {
+			"Translation": {
+				"X": -160.0,
+				"Y": 0.0,
+				"Z": -460.0
+			}
+		},
+		"Model": "d56dd0be474a81f7444a049ca25cf5fa",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "7ce2c45b46e6843a3e73659267156378",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "d9058f4f47d16cb32d440fbce42315f9",
+		"TypeName": "FlaxEngine.MeshCollider",
+		"ParentID": "2e4b997b41c5987d2cff98a5369743f9",
+		"Name": "MeshCollider",
+		"CollisionData": "9167c58146a7a408eb4787bca0972a8a"
+	}
+]
+}

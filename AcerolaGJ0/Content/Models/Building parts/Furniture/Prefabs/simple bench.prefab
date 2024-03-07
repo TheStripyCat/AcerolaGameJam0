@@ -1,0 +1,53 @@
+{
+	"ID": "239f67774147378932836c8777dc426c",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "83c09a6c459808ae735e5c95b0cf0c02",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "00000000000000000000000000000000",
+		"Name": "simple bench",
+		"Transform": {
+			"Translation": {
+				"X": -465.0,
+				"Y": 5.0,
+				"Z": 190.0
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.7071068286895752,
+				"Z": 0.0,
+				"W": 0.7071068286895752
+			}
+		},
+		"Model": "e69bf6694b9f3192d0810f9c9e74e8ab",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "dd04fc9e47f270dd8167b9b4d2f85e0b",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "83c09a6c459808ae735e5c95b0cf0c02",
+		"Name": "BoxCollider",
+		"Center": {
+			"X": -0.031158447265625,
+			"Y": 23.05162239074707,
+			"Z": -0.153564453125
+		},
+		"Size": {
+			"X": 41.2364501953125,
+			"Y": 46.1037826538086,
+			"Z": 128.60205078125
+		}
+	}
+]
+}

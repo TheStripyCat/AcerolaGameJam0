@@ -1,0 +1,38 @@
+{
+	"ID": "5e3c26ac48c20d453a66a5abd5ddc958",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "1c4ab92f43c5b9afe4ded9afe5493856",
+		"TypeName": "FlaxEngine.StaticModel",
+		"Name": "roof side corner",
+		"Transform": {
+			"Translation": {
+				"X": 100.0,
+				"Y": 0.0,
+				"Z": -460.0
+			}
+		},
+		"Model": "bc28415345210e2170fe6f9771fa0103",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "7ce2c45b46e6843a3e73659267156378",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "6d0b1efb4553c2f0644f28b87f42a044",
+		"TypeName": "FlaxEngine.MeshCollider",
+		"ParentID": "1c4ab92f43c5b9afe4ded9afe5493856",
+		"Name": "MeshCollider",
+		"ContactOffset": 0.0,
+		"CollisionData": "d47d156d44de3190bc57579b078f5c3e"
+	}
+]
+}

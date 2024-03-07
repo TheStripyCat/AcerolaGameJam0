@@ -1,0 +1,47 @@
+{
+	"ID": "bfb14c694392e5f61e93208595235200",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "15274df14368b0c3fd34c2a01accb53a",
+		"TypeName": "FlaxEngine.StaticModel",
+		"Name": "floor",
+		"Transform": {
+			"Translation": {
+				"X": -740.0,
+				"Y": 210.0,
+				"Z": -50.0
+			}
+		},
+		"Model": "b4ad1c2045a9e754d318788c51fc37cd",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "b766b61147a4235c3e4ade8c4b295bd4",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "bfb213254d7d2a1754393384bb5718ce",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "15274df14368b0c3fd34c2a01accb53a",
+		"Name": "BoxCollider",
+		"Center": {
+			"X": 0.0,
+			"Y": -5.0,
+			"Z": 0.0
+		},
+		"ContactOffset": 0.0,
+		"Size": {
+			"X": 200.0,
+			"Y": 10.0,
+			"Z": 200.0
+		}
+	}
+]
+}

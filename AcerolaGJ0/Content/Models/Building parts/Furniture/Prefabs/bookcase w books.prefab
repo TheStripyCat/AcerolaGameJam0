@@ -1,0 +1,59 @@
+{
+	"ID": "e0070acb4d703fc0b4b105834eef4130",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "05779d974faffa0278d769af47ae608c",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "00000000000000000000000000000000",
+		"Name": "bookcase w books",
+		"Transform": {
+			"Translation": {
+				"X": -255.0,
+				"Y": 390.0,
+				"Z": -235.0
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": 1.0,
+				"Z": 0.0,
+				"W": -4.3711388286737938e-8
+			}
+		},
+		"Model": "abac038f42d01c9e36507f8eec537a9b",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "6b5ca317439839e1ab1eb0a30747ba6d",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "05779d974faffa0278d769af47ae608c",
+		"Name": "BoxCollider",
+		"Center": {
+			"X": 24.93313598632813,
+			"Y": -39.4539794921875,
+			"Z": -0.0000152587890625
+		},
+		"Size": {
+			"X": 220.0,
+			"Y": 199.99998474121098,
+			"Z": 30.00003051757813
+		}
+	}
+]
+}

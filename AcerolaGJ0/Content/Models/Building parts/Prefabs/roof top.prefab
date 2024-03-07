@@ -1,0 +1,88 @@
+{
+	"ID": "8d073b5840e290da6e077889af7efc05",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "cba2da6a449e8ac0a30c0eaa60df24d0",
+		"TypeName": "FlaxEngine.StaticModel",
+		"Name": "roof top",
+		"Transform": {
+			"Translation": {
+				"X": -580.0,
+				"Y": 0.0,
+				"Z": -690.0
+			}
+		},
+		"Model": "d04e037245ef111a0142129bb6d316c2",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "703ec9ad4e8dc3db6a7ddc807302e520",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "b52ded304f91e154b43f469f92d11a34",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "cba2da6a449e8ac0a30c0eaa60df24d0",
+		"Name": "BoxCollider",
+		"Transform": {
+			"Translation": {
+				"X": 183.78338623046876,
+				"Y": 29.627548217773439,
+				"Z": 0.0
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.3296906650066376,
+				"W": 0.9440891146659851
+			}
+		},
+		"Center": {
+			"X": 0.0,
+			"Y": 129.4208984375,
+			"Z": 0.0
+		},
+		"Size": {
+			"X": 13.76837158203125,
+			"Y": 317.25341796875,
+			"Z": 100.0
+		}
+	},
+	{
+		"ID": "4f94c07c46accf7d0d879db0e22f02a7",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "cba2da6a449e8ac0a30c0eaa60df24d0",
+		"Name": "BoxCollider 0",
+		"Transform": {
+			"Translation": {
+				"X": -182.86810302734376,
+				"Y": 29.627548217773439,
+				"Z": 0.0
+			},
+			"Orientation": {
+				"X": 0.3296906650066376,
+				"Y": 0.9440891146659851,
+				"Z": -1.4411237536648969e-8,
+				"W": -4.1267444572667958e-8
+			}
+		},
+		"Center": {
+			"X": 0.0,
+			"Y": 129.4208984375,
+			"Z": 0.0
+		},
+		"Size": {
+			"X": 13.76837158203125,
+			"Y": 317.25341796875,
+			"Z": 100.0
+		}
+	}
+]
+}

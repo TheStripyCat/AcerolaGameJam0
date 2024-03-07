@@ -1,0 +1,65 @@
+{
+	"ID": "34b995394f7b5dbd21fe22b76c55f74a",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "8a73cf8e454d4497f2a400a47aa032c3",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "00000000000000000000000000000000",
+		"Name": "double bed",
+		"Transform": {
+			"Translation": {
+				"X": -570.0,
+				"Y": 250.0,
+				"Z": 135.0
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": -0.7071068286895752,
+				"Z": 0.0,
+				"W": 0.7071068286895752
+			}
+		},
+		"Model": "92a1181544498a44d72240b458c70af8",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "fe674e1b4c0d48fdb334f28f42724dcf",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "8a73cf8e454d4497f2a400a47aa032c3",
+		"Name": "BoxCollider",
+		"Center": {
+			"X": 0.0,
+			"Y": 46.31268310546875,
+			"Z": -0.268035888671875
+		},
+		"Size": {
+			"X": 139.68521118164066,
+			"Y": 92.62542724609377,
+			"Z": 215.0077362060547
+		}
+	}
+]
+}

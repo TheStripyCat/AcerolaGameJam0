@@ -1,0 +1,55 @@
+{
+	"ID": "830799734b881bb057786b84f18c014b",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "227ed0ec4055b6a460601d9abcd2fec2",
+		"TypeName": "FlaxEngine.StaticModel",
+		"Name": "roof side",
+		"Transform": {
+			"Translation": {
+				"X": -690.0,
+				"Y": 0.0,
+				"Z": -450.0
+			}
+		},
+		"Model": "bfca9e074e97856976cf4fbcb3f7035e",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "703ec9ad4e8dc3db6a7ddc807302e520",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "f9f1be1c4de51acfc9db879d07a4a318",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "227ed0ec4055b6a460601d9abcd2fec2",
+		"Name": "BoxCollider",
+		"Transform": {
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.3296906650066376,
+				"W": 0.9440891146659851
+			}
+		},
+		"Center": {
+			"X": 81.9959716796875,
+			"Y": 101.18643188476563,
+			"Z": -40.0
+		},
+		"ContactOffset": 0.0,
+		"Size": {
+			"X": 14.991943359375,
+			"Y": 309.37286376953127,
+			"Z": 100.00009155273438
+		}
+	}
+]
+}

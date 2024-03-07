@@ -1,0 +1,38 @@
+{
+	"ID": "a5bbe7dd432e3cf51eb967bbec7f8879",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "2a9e7c9145cea03fcf9bebbd4fb3eaa0",
+		"TypeName": "FlaxEngine.StaticModel",
+		"Name": "stairs",
+		"Transform": {
+			"Translation": {
+				"X": -520.0,
+				"Y": 0.0,
+				"Z": 460.0
+			}
+		},
+		"Model": "ff6d40684699541f510989b49631e6e8",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "b766b61147a4235c3e4ade8c4b295bd4",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "30993f364d2740a7887daca084453be3",
+		"TypeName": "FlaxEngine.MeshCollider",
+		"ParentID": "2a9e7c9145cea03fcf9bebbd4fb3eaa0",
+		"Name": "MeshCollider",
+		"ContactOffset": 0.0,
+		"CollisionData": "0fd95c514b1c6c96972f0eb33556e7ec"
+	}
+]
+}

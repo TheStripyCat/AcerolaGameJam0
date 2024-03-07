@@ -1,0 +1,47 @@
+{
+	"ID": "0487215b4a8f5a3fe31b1fa55b3239f0",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "8730021141464478d8f7499c0653057b",
+		"TypeName": "FlaxEngine.StaticModel",
+		"Name": "floor next to stairs",
+		"Transform": {
+			"Translation": {
+				"X": 410.0,
+				"Y": 40.0,
+				"Z": 180.0
+			}
+		},
+		"Model": "3ae33938402e4ac7d8f34785fc9185f9",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "b766b61147a4235c3e4ade8c4b295bd4",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "42c3a37a404dc389a65f6f88f3e4c841",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "8730021141464478d8f7499c0653057b",
+		"Name": "BoxCollider",
+		"Center": {
+			"X": 0.0,
+			"Y": -4.999996185302734,
+			"Z": 0.0
+		},
+		"ContactOffset": 0.0,
+		"Size": {
+			"X": 180.00869750976563,
+			"Y": 10.0,
+			"Z": 200.0
+		}
+	}
+]
+}

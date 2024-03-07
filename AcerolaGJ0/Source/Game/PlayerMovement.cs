@@ -11,8 +11,10 @@ namespace Game;
 public class PlayerMovement : Script
 {
     CharacterController player;
-    [Serialize, ShowInEditor] Actor camera;
+    [Serialize, ShowInEditor] Actor camera, playerModel;
     
+    private AnimGraphParameter isRunning, isWalking;
+
     public Float2 camVertMinMax;
 
     public float rotationSpeed, playerSpeed, mouseSensitivity, grav;
@@ -23,6 +25,8 @@ public class PlayerMovement : Script
     public override void OnStart()
     {
         player = Actor as CharacterController;
+        isRunning = playerModel.As<AnimatedModel>().GetParameter("isRunning");
+        isWalking = playerModel.As<AnimatedModel>().GetParameter("isWalking");
 
     }
     
@@ -48,11 +52,27 @@ public class PlayerMovement : Script
         inputDir = camForward * vInput + camera.Transform.Right * hInput;
         movement = new Vector3(inputDir.X, grav, inputDir.Z) * playerSpeed;
 
-        //rotate the character
-        if (inputDir != Vector3.Zero)
+        //rotate the character and set speed
+        if ((inputDir != Vector3.Zero)&(Input.GetKey(KeyboardKeys.Shift)))
         {
+            playerSpeed = 3f;
+            isRunning.Value = false;
+            isWalking.Value = true;
             targetAngle = Mathf.Atan2(inputDir.X, inputDir.Z) * Mathf.RadiansToDegrees;
             player.LocalOrientation = Quaternion.Lerp(player.LocalOrientation, Quaternion.Euler(0f, targetAngle, 0f), rotationSpeed * Time.DeltaTime);
+        }
+        else if (inputDir != Vector3.Zero)
+        {
+            playerSpeed = 7f;
+            isWalking.Value = false;
+            isRunning.Value = true;
+            targetAngle = Mathf.Atan2(inputDir.X, inputDir.Z) * Mathf.RadiansToDegrees;
+            player.LocalOrientation = Quaternion.Lerp(player.LocalOrientation, Quaternion.Euler(0f, targetAngle, 0f), rotationSpeed * Time.DeltaTime);
+        }
+        else
+        {
+            isRunning.Value = false;
+            isWalking.Value = false;
         }
     
     }

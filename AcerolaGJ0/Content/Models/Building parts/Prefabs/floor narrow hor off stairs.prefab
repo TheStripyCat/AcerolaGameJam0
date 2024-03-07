@@ -1,0 +1,47 @@
+{
+	"ID": "4a23bb2f48529f55047eefb122bbdb4e",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "e390e0864ba6b65b92c72c82c57f8efb",
+		"TypeName": "FlaxEngine.StaticModel",
+		"Name": "floor narrow hor off stairs",
+		"Transform": {
+			"Translation": {
+				"X": -30.0,
+				"Y": 50.0,
+				"Z": 230.0
+			}
+		},
+		"Model": "94fe4f6a4bab1d5f8c5dda821340ddf8",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "b766b61147a4235c3e4ade8c4b295bd4",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "7b4fb583464546aeb61235922c11559e",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "e390e0864ba6b65b92c72c82c57f8efb",
+		"Name": "BoxCollider",
+		"Center": {
+			"X": -0.00000762939453125,
+			"Y": -4.999996185302734,
+			"Z": 0.0
+		},
+		"ContactOffset": 0.0,
+		"Size": {
+			"X": 180.00872802734376,
+			"Y": 10.0,
+			"Z": 80.0
+		}
+	}
+]
+}

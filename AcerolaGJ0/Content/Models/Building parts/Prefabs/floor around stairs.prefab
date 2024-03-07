@@ -1,0 +1,38 @@
+{
+	"ID": "9eed05414af392d762a691b143dab63c",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "ab8c2bd44a646138ea0c858875deb664",
+		"TypeName": "FlaxEngine.StaticModel",
+		"Name": "floor around stairs",
+		"Transform": {
+			"Translation": {
+				"X": -520.0,
+				"Y": 50.0,
+				"Z": -150.0
+			}
+		},
+		"Model": "1ceb60d54a573dba1cd9e791859c60db",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "b766b61147a4235c3e4ade8c4b295bd4",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "32b33d4a4fd35ecc255c838b8a3d7cd2",
+		"TypeName": "FlaxEngine.MeshCollider",
+		"ParentID": "ab8c2bd44a646138ea0c858875deb664",
+		"Name": "MeshCollider",
+		"ContactOffset": 0.0,
+		"CollisionData": "3807537b454f17e6aa9e91bd190170ae"
+	}
+]
+}

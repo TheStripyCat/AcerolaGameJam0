@@ -1,0 +1,48 @@
+{
+	"ID": "a0acb5024677c731d839a5acb28d9af9",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "a963dfdb40ae036ff80d3bb5d24578e7",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "00000000000000000000000000000000",
+		"Name": "roof top small corner no wall",
+		"Transform": {
+			"Translation": {
+				"X": -406.0,
+				"Y": 637.0,
+				"Z": 68.0
+			}
+		},
+		"Model": "7c4530d5449bee41bd90dd9481c3a833",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "703ec9ad4e8dc3db6a7ddc807302e520",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "4d446d624253e22b4a90bfa7ca87e917",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "a963dfdb40ae036ff80d3bb5d24578e7",
+		"Name": "BoxCollider",
+		"Center": {
+			"X": 0.0,
+			"Y": 67.126708984375,
+			"Z": -39.999977111816409
+		},
+		"ContactOffset": 0.0,
+		"Size": {
+			"X": 227.76840209960936,
+			"Y": 134.25341796875,
+			"Z": 100.0000457763672
+		}
+	}
+]
+}

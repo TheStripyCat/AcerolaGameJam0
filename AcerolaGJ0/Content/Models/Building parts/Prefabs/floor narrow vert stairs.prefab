@@ -1,0 +1,47 @@
+{
+	"ID": "105ca292455361ecafeb8b9be05d009b",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "4670040747c1f740facaf5914c65ae00",
+		"TypeName": "FlaxEngine.StaticModel",
+		"Name": "floor narrow vert stairs",
+		"Transform": {
+			"Translation": {
+				"X": 340.0,
+				"Y": 40.0,
+				"Z": 370.0
+			}
+		},
+		"Model": "e5bd24d740419b1028c1dcbe113d7b24",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "b766b61147a4235c3e4ade8c4b295bd4",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "1cbcc64247c5c57b0ffed9b036c7c87b",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "4670040747c1f740facaf5914c65ae00",
+		"Name": "BoxCollider",
+		"Center": {
+			"X": 0.0,
+			"Y": -4.999996185302734,
+			"Z": 0.0
+		},
+		"ContactOffset": 0.0,
+		"Size": {
+			"X": 80.0,
+			"Y": 10.0,
+			"Z": 159.16485595703126
+		}
+	}
+]
+}

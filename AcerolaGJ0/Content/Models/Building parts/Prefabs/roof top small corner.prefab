@@ -1,0 +1,53 @@
+{
+	"ID": "e242a6e64cd85d9294500b8fed57743e",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "e38554c140b912a015be15bb479495c3",
+		"TypeName": "FlaxEngine.StaticModel",
+		"Name": "roof top small corner",
+		"Transform": {
+			"Translation": {
+				"X": -450.0,
+				"Y": 0.0,
+				"Z": -870.0
+			}
+		},
+		"Model": "223088934a27e3ad28ace98650ada316",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "7ce2c45b46e6843a3e73659267156378",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "703ec9ad4e8dc3db6a7ddc807302e520",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "0e64db9740fc3aab170179bc1c3775bf",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "e38554c140b912a015be15bb479495c3",
+		"Name": "BoxCollider",
+		"Center": {
+			"X": 0.0,
+			"Y": 67.12669372558594,
+			"Z": -40.0
+		},
+		"ContactOffset": 0.0,
+		"Size": {
+			"X": 227.76840209960938,
+			"Y": 134.2533721923828,
+			"Z": 100.00006103515625
+		}
+	}
+]
+}

@@ -1,0 +1,183 @@
+{
+	"ID": "19aede724221f53c5513be975a0e2562",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "215c20be40c2cb359807008531574301",
+		"TypeName": "FlaxEngine.AnimatedModel",
+		"Name": "wall with door",
+		"Transform": {
+			"Translation": {
+				"X": -498.0,
+				"Y": 0.0,
+				"Z": -260.0
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": 1.0,
+				"Z": 0.0,
+				"W": -4.371138828673793e-8
+			}
+		},
+		"SkinnedModel": "2022a65f4dbba40b364b14afcd569477",
+		"AnimationGraph": "11fa7b2d43023a05160bcf98bd6b7a22",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "12cf49e94bcacdf8d81a32a24863867a",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "643a1d9e48645a79e0c5a286465d15e4",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "7ce2c45b46e6843a3e73659267156378",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "19448fb4476167a0b52b98a1b0147265",
+		"TypeName": "Game.DoorScript",
+		"ParentID": "215c20be40c2cb359807008531574301",
+		"V": {
+	"interractionTrigger": "5aaf8d564f93fd69345300aac2eac0f1"
+}
+	},
+	{
+		"ID": "52fc6a914b6a356b1b7be7923474a6e4",
+		"TypeName": "FlaxEngine.BoneSocket",
+		"ParentID": "215c20be40c2cb359807008531574301",
+		"Name": "BoneSocket",
+		"Transform": {
+			"Translation": {
+				"X": 60.08511734008789,
+				"Y": 78.44635772705078,
+				"Z": 5.180177688598633
+			},
+			"Orientation": {
+				"X": 0.5000125765800476,
+				"Y": -0.49998754262924197,
+				"Z": 0.49998748302459719,
+				"W": 0.5000124573707581
+			}
+		},
+		"Node": "door"
+	},
+	{
+		"ID": "208e3202495acd4084ff768443711180",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "52fc6a914b6a356b1b7be7923474a6e4",
+		"Name": "BoxCollider",
+		"Tag": "Door",
+		"Center": {
+			"X": -5.0,
+			"Y": 60.0,
+			"Z": -20.0
+		},
+		"Size": {
+			"X": 10.0,
+			"Y": 119.0,
+			"Z": 190.0
+		}
+	},
+	{
+		"ID": "a66a8d354349956ace8ef4b4a9eaf4b8",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "215c20be40c2cb359807008531574301",
+		"Name": "BoxCollider",
+		"Center": {
+			"X": 79.0,
+			"Y": 125.0,
+			"Z": 0.0
+		},
+		"ContactOffset": 0.0,
+		"Size": {
+			"X": 40.0,
+			"Y": 250.0,
+			"Z": 24.26507568359375
+		}
+	},
+	{
+		"ID": "4e2f4fe54118da63505a5da74f1e655e",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "215c20be40c2cb359807008531574301",
+		"Name": "BoxCollider 0",
+		"Transform": {
+			"Translation": {
+				"X": -158.0228271484375,
+				"Y": 0.0,
+				"Z": 0.0
+			}
+		},
+		"Center": {
+			"X": 79.0,
+			"Y": 125.0,
+			"Z": 0.0
+		},
+		"ContactOffset": 0.0,
+		"Size": {
+			"X": 40.0,
+			"Y": 250.0,
+			"Z": 24.26507568359375
+		}
+	},
+	{
+		"ID": "5b47e2e4480548e004c1ed836076aa8b",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "215c20be40c2cb359807008531574301",
+		"Name": "BoxCollider 1",
+		"Transform": {
+			"Translation": {
+				"X": -79.2259521484375,
+				"Y": 0.0,
+				"Z": 0.0
+			}
+		},
+		"Center": {
+			"X": 79.0,
+			"Y": 222.0,
+			"Z": 0.0
+		},
+		"ContactOffset": 0.0,
+		"Size": {
+			"X": 117.0,
+			"Y": 55.0,
+			"Z": 24.26507568359375
+		}
+	},
+	{
+		"ID": "5aaf8d564f93fd69345300aac2eac0f1",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "215c20be40c2cb359807008531574301",
+		"Name": "Trigger",
+		"IsTrigger": true,
+		"Center": {
+			"X": 0.0,
+			"Y": 100.0,
+			"Z": 0.05523681640625
+		},
+		"ContactOffset": 0.0,
+		"Size": {
+			"X": 186.0,
+			"Y": 200.0,
+			"Z": 360.0
+		}
+	}
+]
+}
