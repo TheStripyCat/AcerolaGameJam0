@@ -54,8 +54,7 @@ public class DoorScript : Script
     {
         if (other.HasTag("Player"))
         {
-            isInteractable = true;
-            Debug.Log("door in range");
+            isInteractable = true;            
         }
         
     }
@@ -63,8 +62,7 @@ public class DoorScript : Script
     {
         if (other.HasTag("Player"))
         {
-            isInteractable = false;
-            Debug.Log("door out of range");
+            isInteractable = false;           
         }
             
     }

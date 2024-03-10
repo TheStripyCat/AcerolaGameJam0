@@ -1,0 +1,36 @@
+{
+	"ID": "6147a17045c857857838e08040cbce30",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "05b0b1e54c635a818ddb429595627a43",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"Name": "SphereOddity"
+	},
+	{
+		"ID": "3073059c4fd5fa77e67b21ab2640f4a6",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "05b0b1e54c635a818ddb429595627a43",
+		"Name": "Sphere",
+		"Transform": {
+			"Scale": {
+				"X": 0.5,
+				"Y": 0.5,
+				"Z": 0.5
+			}
+		},
+		"Model": "dd86c4724bf734c4959d23b3c74faa05",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "bbde83f14a6a01fafaaf688f053e18bc",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	}
+]
+}

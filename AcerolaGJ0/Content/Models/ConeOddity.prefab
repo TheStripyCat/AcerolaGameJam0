@@ -1,0 +1,65 @@
+{
+	"ID": "96e6726b49d00ea5c5c665aef6c4898b",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "4bc0315a47faea73fabc7d9b6bbb8ff2",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"Name": "ConeOddity"
+	},
+	{
+		"ID": "a168561043f82372c47af98f65159f26",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "4bc0315a47faea73fabc7d9b6bbb8ff2",
+		"Name": "Cone",
+		"Transform": {
+			"Scale": {
+				"X": 0.5,
+				"Y": 0.5,
+				"Z": 0.5
+			}
+		},
+		"Model": "1b4a643d44706750b2e35ea4e11e3663",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "bbde83f14a6a01fafaaf688f053e18bc",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "d8e18f054decf081a755bf99b3b88515",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "4bc0315a47faea73fabc7d9b6bbb8ff2",
+		"Name": "Sphere",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": 20.305912017822267,
+				"Z": 0.0
+			},
+			"Scale": {
+				"X": 0.25,
+				"Y": 0.25,
+				"Z": 0.25
+			}
+		},
+		"Model": "dd86c4724bf734c4959d23b3c74faa05",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "bbde83f14a6a01fafaaf688f053e18bc",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	}
+]
+}

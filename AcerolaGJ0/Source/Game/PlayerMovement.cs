@@ -44,7 +44,7 @@ public class PlayerMovement : Script
         hLookDir += Input.GetAxis("Mouse X") * mouseSensitivity * Time.DeltaTime;
         vLookDir += Input.GetAxis("Mouse Y") * mouseSensitivity * Time.DeltaTime;
         vLookDir = Mathf.Clamp(vLookDir, camVertMinMax.X, camVertMinMax.Y);
-        camera.Parent.Orientation = Quaternion.Lerp(camera.Parent.Orientation, Quaternion.Euler(vLookDir, hLookDir, 0f), Time.DeltaTime * 10f);
+        camera.Parent.Orientation = Quaternion.Lerp(camera.Parent.Orientation, Quaternion.Euler(vLookDir, hLookDir, 0f), Time.DeltaTime * 20f);
 
         //find movement vector relative to camera direction
         hInput = Input.GetAxis("Horizontal");
@@ -53,13 +53,13 @@ public class PlayerMovement : Script
         movement = new Vector3(inputDir.X, grav, inputDir.Z) * playerSpeed;
 
         //rotate the character and set speed
-        if ((inputDir != Vector3.Zero)&(Input.GetKey(KeyboardKeys.Shift)))
+        if (inputDir != Vector3.Zero && Input.GetKey(KeyboardKeys.Shift))
         {
             playerSpeed = 3f;
             isRunning.Value = false;
             isWalking.Value = true;
             targetAngle = Mathf.Atan2(inputDir.X, inputDir.Z) * Mathf.RadiansToDegrees;
-            player.LocalOrientation = Quaternion.Lerp(player.LocalOrientation, Quaternion.Euler(0f, targetAngle, 0f), rotationSpeed * Time.DeltaTime);
+            playerModel.Orientation = Quaternion.Lerp(playerModel.Orientation, Quaternion.Euler(0f, targetAngle, 0f), rotationSpeed * Time.DeltaTime);
         }
         else if (inputDir != Vector3.Zero)
         {
@@ -67,7 +67,7 @@ public class PlayerMovement : Script
             isWalking.Value = false;
             isRunning.Value = true;
             targetAngle = Mathf.Atan2(inputDir.X, inputDir.Z) * Mathf.RadiansToDegrees;
-            player.LocalOrientation = Quaternion.Lerp(player.LocalOrientation, Quaternion.Euler(0f, targetAngle, 0f), rotationSpeed * Time.DeltaTime);
+            playerModel.Orientation = Quaternion.Lerp(playerModel.Orientation, Quaternion.Euler(0f, targetAngle, 0f), rotationSpeed * Time.DeltaTime);
         }
         else
         {

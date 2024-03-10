@@ -1,0 +1,41 @@
+{
+	"ID": "44d6f5c341cfd3755ff9078eef9bbfb5",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "5d79a6da43377776aea382887a4b3455",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"Name": "CapsuleOddity"
+	},
+	{
+		"ID": "05baaad3453cf3ca9fcb2f9572b8668d",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "5d79a6da43377776aea382887a4b3455",
+		"Name": "Capsule",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": -5.0,
+				"Z": 0.0
+			},
+			"Scale": {
+				"X": 0.5,
+				"Y": 0.5,
+				"Z": 0.5
+			}
+		},
+		"Model": "3f82e57744f57c28285150b646ad2198",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "bbde83f14a6a01fafaaf688f053e18bc",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	}
+]
+}

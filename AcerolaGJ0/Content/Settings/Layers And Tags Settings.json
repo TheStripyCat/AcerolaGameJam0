@@ -6,7 +6,8 @@
 	"Tags": [
 		"Bullet",
 		"Door",
-		"Player"
+		"Player",
+		"thePlace"
 	],
 	"Layers": [
 		"Default",
