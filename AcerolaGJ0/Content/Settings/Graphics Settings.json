@@ -44,8 +44,8 @@
 			}
 		},
 		"Bloom": {
-			"OverrideFlags": 0,
-			"Enabled": true,
+			"OverrideFlags": 1,
+			"Enabled": false,
 			"Intensity": 1.0,
 			"Threshold": 3.0,
 			"BlurSigma": 4.0,
@@ -185,8 +185,8 @@
 			"LutWeight": 1.0
 		},
 		"EyeAdaptation": {
-			"OverrideFlags": 0,
-			"Mode": 2,
+			"OverrideFlags": 1,
+			"Mode": 0,
 			"SpeedUp": 3.0,
 			"SpeedDown": 1.0,
 			"PreExposure": 0.0,

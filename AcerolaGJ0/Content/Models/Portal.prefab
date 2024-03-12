@@ -1,0 +1,92 @@
+{
+	"ID": "013787484b36af0622bb0e8449f8ecb1",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "fccd97b841c8e5697ca463b18c6b3355",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"Name": "Portal"
+	},
+	{
+		"ID": "273dfe3946c85816e7264b8c5d06a9d4",
+		"TypeName": "Game.PortalScript",
+		"ParentID": "fccd97b841c8e5697ca463b18c6b3355",
+		"V": {
+	"portalCollider": "48a7b6704d497ceb054d0c9610207dcc"
+}
+	},
+	{
+		"ID": "4cfe435349790920627dbbb9adfcee9f",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "fccd97b841c8e5697ca463b18c6b3355",
+		"Name": "Sphere",
+		"Transform": {
+			"Scale": {
+				"X": 1.0,
+				"Y": 2.0,
+				"Z": 0.10000000149011612
+			}
+		},
+		"Model": "dd86c4724bf734c4959d23b3c74faa05",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "a08b3b1348d9c94f0b66708b7569060a",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "4c46f8374c84b15956d2269cdd7d945e",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "fccd97b841c8e5697ca463b18c6b3355",
+		"Name": "Sphere 0",
+		"Transform": {
+			"Scale": {
+				"X": 0.800000011920929,
+				"Y": 1.7999999523162842,
+				"Z": 0.006000000052154064
+			}
+		},
+		"Model": "dd86c4724bf734c4959d23b3c74faa05",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "316d2d8a42397c7a548191a92be1d1a7",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "48a7b6704d497ceb054d0c9610207dcc",
+		"TypeName": "FlaxEngine.CapsuleCollider",
+		"ParentID": "fccd97b841c8e5697ca463b18c6b3355",
+		"Name": "CapsuleCollider",
+		"Transform": {
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.7071068286895752,
+				"W": 0.7071068286895752
+			}
+		},
+		"IsTrigger": true,
+		"Radius": 50.0
+	},
+	{
+		"ID": "08d854494a93ed189de123a882233ef8",
+		"TypeName": "FlaxEngine.AudioSource",
+		"ParentID": "fccd97b841c8e5697ca463b18c6b3355",
+		"Name": "AudioSource",
+		"Clip": "84f6242641cf0715772b1089c0c41ab3",
+		"PlayOnStart": true
+	}
+]
+}

@@ -12,14 +12,16 @@ public class PlayerMovement : Script
 {
     CharacterController player;
     [Serialize, ShowInEditor] Actor camera, playerModel;
-    
-    private AnimGraphParameter isRunning, isWalking;
+    [Serialize, ShowInEditor] Prefab portalPrefab;
+    private AnimGraphParameter isRunning, isWalking, isReading;
+    [Serialize, ShowInEditor] AudioSource playerAudioSource;
 
     public Float2 camVertMinMax;
 
     public float rotationSpeed, playerSpeed, mouseSensitivity, grav;
-    private float hInput, vInput, hLookDir, vLookDir, targetAngle;
+    private float hInput, vInput, hLookDir, vLookDir, targetAngle, incantationTimer, insanity, maxInsaneAngle, camZrot;
     private Vector3 viewDir, camForward, movement, inputDir;
+    private bool portalSpawned, camZup;
     
     /// <inheritdoc/>
     public override void OnStart()
@@ -27,7 +29,9 @@ public class PlayerMovement : Script
         player = Actor as CharacterController;
         isRunning = playerModel.As<AnimatedModel>().GetParameter("isRunning");
         isWalking = playerModel.As<AnimatedModel>().GetParameter("isWalking");
-
+        isReading = playerModel.As<AnimatedModel>().GetParameter("isReading");        
+        incantationTimer = 0f;
+        insanity = 0f; maxInsaneAngle = 0f;
     }
     
     
@@ -40,11 +44,30 @@ public class PlayerMovement : Script
         viewDir = player.Position - new Vector3(camera.Position.X, player.Position.Y, camera.Position.Z);
         camForward = viewDir.Normalized;
 
+        insanity += 0.0001f* Time.DeltaTime;
+        
+        //calculate camera Z rotation (depends on insanity)
+        if ((camZup) && (camZrot < maxInsaneAngle))
+        {
+            camZrot += insanity;
+        }
+        else if (camZrot >= maxInsaneAngle)
+        {
+            camZup = false;
+        }
+        if ((!camZup) && (camZrot > -maxInsaneAngle))
+        {
+            camZrot -= insanity;
+        }
+        else if (camZrot <= -maxInsaneAngle)
+        {
+            camZup = true;
+        }
         //rotate camera
         hLookDir += Input.GetAxis("Mouse X") * mouseSensitivity * Time.DeltaTime;
         vLookDir += Input.GetAxis("Mouse Y") * mouseSensitivity * Time.DeltaTime;
         vLookDir = Mathf.Clamp(vLookDir, camVertMinMax.X, camVertMinMax.Y);
-        camera.Parent.Orientation = Quaternion.Lerp(camera.Parent.Orientation, Quaternion.Euler(vLookDir, hLookDir, 0f), Time.DeltaTime * 20f);
+        camera.Parent.Orientation = Quaternion.Lerp(camera.Parent.Orientation, Quaternion.Euler(vLookDir, hLookDir, camZrot), Time.DeltaTime * 20f);
 
         //find movement vector relative to camera direction
         hInput = Input.GetAxis("Horizontal");
@@ -52,10 +75,34 @@ public class PlayerMovement : Script
         inputDir = camForward * vInput + camera.Transform.Right * hInput;
         movement = new Vector3(inputDir.X, grav, inputDir.Z) * playerSpeed;
 
-        //rotate the character and set speed
-        if (inputDir != Vector3.Zero && Input.GetKey(KeyboardKeys.Shift))
+        //reading incantation and spawning the portal
+        if (Input.GetKey(KeyboardKeys.R))
         {
+            playerSpeed = 0f;
+            isReading.Value = true;
+            isRunning.Value = false;
+            isWalking.Value = false;            
+            incantationTimer += Time.DeltaTime;
+            playerAudioSource.Play();
+            if (incantationTimer >= 4.2f)
+            {
+                playerAudioSource.Stop();
+                if ((portalSpawned == false) &(PluginManager.GetPlugin<PortalPlugin>().inPortalSpace))
+                {
+                    PrefabManager.SpawnPrefab(portalPrefab, PluginManager.GetPlugin<PortalPlugin>().portalPosition, PluginManager.GetPlugin<PortalPlugin>().portalSpawnEmpty.Orientation);
+                    portalSpawned = true;
+                    Debug.Log("portal spawned");
+                }
+            }
+        }
+        
+        //rotate the character and set speed
+        else if (inputDir != Vector3.Zero && Input.GetKey(KeyboardKeys.Shift))
+        {
+            playerAudioSource.Stop();
+            incantationTimer = 0f;
             playerSpeed = 3f;
+            isReading.Value = false;
             isRunning.Value = false;
             isWalking.Value = true;
             targetAngle = Mathf.Atan2(inputDir.X, inputDir.Z) * Mathf.RadiansToDegrees;
@@ -63,7 +110,10 @@ public class PlayerMovement : Script
         }
         else if (inputDir != Vector3.Zero)
         {
+            playerAudioSource.Stop();
+            incantationTimer = 0f;
             playerSpeed = 7f;
+            isReading.Value = false;
             isWalking.Value = false;
             isRunning.Value = true;
             targetAngle = Mathf.Atan2(inputDir.X, inputDir.Z) * Mathf.RadiansToDegrees;
@@ -71,10 +121,14 @@ public class PlayerMovement : Script
         }
         else
         {
+            playerAudioSource.Stop();
+            incantationTimer = 0f;
+            isReading.Value = false;
             isRunning.Value = false;
             isWalking.Value = false;
         }
-    
+        
+
     }
     public override void OnFixedUpdate()
     {

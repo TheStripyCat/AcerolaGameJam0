@@ -9,8 +9,7 @@ namespace Game;
 /// </summary>
 public class ViewObstruction : Script
 {
-    private Vector3 camPos, camJoint, viewDir;
-    private MaterialBase material;
+    private Vector3 camPos, camJoint, viewDir;    
     private List<MaterialBase> materials;
     public MaterialBase seeThroughMat;
     private RayCastHit hit;

@@ -12,7 +12,8 @@ public class TileScript : Script
     public Actor playerSpawn;
     public List<Actor> odditySpawns;
     [Serialize, ShowInEditor] Collider portalSpace;
-    private bool inPortalSpace;
+    [Serialize, ShowInEditor] Actor portalExit, portalPosition;
+
     
     public override void OnEnable()
     {
@@ -35,28 +36,23 @@ public class TileScript : Script
     }
 
     /// <inheritdoc/>
-    public override void OnUpdate()
-    {
-        // Here you can add code that needs to be called every frame
-    }
+    
     private void InPortalSpace(PhysicsColliderActor other)
     {
         if (other.HasTag("Player"))
         {
-            inPortalSpace = true;
-            Debug.Log("portal space");
+            PluginManager.GetPlugin<PortalPlugin>().inPortalSpace = true;
+            PluginManager.GetPlugin<PortalPlugin>().portalPosition = portalPosition.Position;
+            PluginManager.GetPlugin<PortalPlugin>().portalSpawnEmpty = portalPosition;
+            PluginManager.GetPlugin<PortalPlugin>().portalExit = portalExit.Position;            
         }
     }
     private void NotInPortalSpace(PhysicsColliderActor other)
     {
         if (other.HasTag("Player"))
         {
-            inPortalSpace = false;
-            Debug.Log("not in portal space");
+            PluginManager.GetPlugin<PortalPlugin>().inPortalSpace = false;           
         }
     }
-    public bool PortalSpace()
-    {
-        return inPortalSpace;
-    }
+    
 }

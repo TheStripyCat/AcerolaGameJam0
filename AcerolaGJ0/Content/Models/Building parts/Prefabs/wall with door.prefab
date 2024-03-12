@@ -1,7 +1,7 @@
 {
 	"ID": "19aede724221f53c5513be975a0e2562",
 	"TypeName": "FlaxEngine.Prefab",
-	"EngineBuild": 6407,
+	"EngineBuild": 6408,
 	"Data": [
 	{
 		"ID": "215c20be40c2cb359807008531574301",
@@ -56,7 +56,11 @@
 		"TypeName": "Game.DoorScript",
 		"ParentID": "215c20be40c2cb359807008531574301",
 		"V": {
-	"interractionTrigger": "5aaf8d564f93fd69345300aac2eac0f1"
+	"interractionTrigger": "5aaf8d564f93fd69345300aac2eac0f1",
+	"openPrompt": "c40be3c547832bcd67f8728cbec50202",
+	"closePrompt": "c5c6815c42bea92f003b17864e8f2a97",
+	"openDoorSound": "fc7d90fb40096948bbd297b31d8485b0",
+	"closeDoorSound": "5de9a4fb49290dbf88a503a79a459dc0"
 }
 	},
 	{
@@ -178,6 +182,12 @@
 			"Y": 200.0,
 			"Z": 360.0
 		}
+	},
+	{
+		"ID": "03b56bbc42e938f7d37910b6d1f65359",
+		"TypeName": "FlaxEngine.AudioSource",
+		"ParentID": "215c20be40c2cb359807008531574301",
+		"Name": "AudioSource"
 	}
 ]
 }

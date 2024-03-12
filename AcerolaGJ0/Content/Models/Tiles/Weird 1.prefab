@@ -14,7 +14,9 @@
 		"ParentID": "dc1161f74b6c60f941496d864373bea4",
 		"V": {
 	"playerSpawn": "37c4ee1e499dac5345af46895a7a1875",
-	"portalSpace": "c2780849466a80c7e69b99a5cf3aebeb"
+	"portalSpace": "c2780849466a80c7e69b99a5cf3aebeb",
+	"portalExit": "e1c12a244ed0faac49e4e39d30ddd17b",
+	"portalPosition": "a41d9a1f47ff3e3fc3cf88b7d493ddb8"
 }
 	},
 	{
@@ -3900,7 +3902,11 @@
 		"TypeName": "Game.DoorScript",
 		"ParentID": "fafd949c455c6e523a2d0c8ba72ad45b",
 		"V": {
-	"interractionTrigger": "1097a13f4141fd5a0adc0c8d240aa84c"
+	"interractionTrigger": "1097a13f4141fd5a0adc0c8d240aa84c",
+	"openPrompt": "c40be3c547832bcd67f8728cbec50202",
+	"closePrompt": "c5c6815c42bea92f003b17864e8f2a97",
+	"openDoorSound": "fc7d90fb40096948bbd297b31d8485b0",
+	"closeDoorSound": "5de9a4fb49290dbf88a503a79a459dc0"
 }
 	},
 	{
@@ -4023,6 +4029,12 @@
 			"Y": 200.0,
 			"Z": 360.0
 		}
+	},
+	{
+		"ID": "befdf99d401fdb6276139589585df13b",
+		"TypeName": "FlaxEngine.AudioSource",
+		"ParentID": "fafd949c455c6e523a2d0c8ba72ad45b",
+		"Name": "AudioSource"
 	},
 	{
 		"ID": "f1cc5eba41029f15741e98a7d768ddf3",
@@ -4997,6 +5009,32 @@
 			"X": 580.0,
 			"Y": 250.0,
 			"Z": 580.0
+		}
+	},
+	{
+		"ID": "a41d9a1f47ff3e3fc3cf88b7d493ddb8",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "c2780849466a80c7e69b99a5cf3aebeb",
+		"Name": "PortalSpawn",
+		"Transform": {
+			"Translation": {
+				"X": -27.7982177734375,
+				"Y": -22.590087890625,
+				"Z": 14.545166015625
+			}
+		}
+	},
+	{
+		"ID": "e1c12a244ed0faac49e4e39d30ddd17b",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "c2780849466a80c7e69b99a5cf3aebeb",
+		"Name": "PortalExit",
+		"Transform": {
+			"Translation": {
+				"X": -31.481292724609376,
+				"Y": -22.590087890625,
+				"Z": 155.08071899414063
+			}
 		}
 	},
 	{

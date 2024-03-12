@@ -1,0 +1,71 @@
+{
+	"ID": "63fa591d4c5737785e9ddd8a0aee799c",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "6e1acdc04cd05eb79ed85abee3d1d980",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "00000000000000000000000000000000",
+		"Name": "hedge line with grass",
+		"Model": "c529372a42af159a8d52d0b3a2623907",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "000f28904489b3e77fe0e6bc4e98afae",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "57fe9bca463a64526b30afb574751ee7",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "65ae36cb40c4af1ca906168325871866",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "bee4c616456b86968860a2abb7c1a313",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "e78750e845f2d58f3c45cba1b6ae2cc0",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "3611682e4f1119ca0eff9da2b66df1d1",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "0ae8dc494b0834fac62a6a9de7ac48bf",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "6e1acdc04cd05eb79ed85abee3d1d980",
+		"Name": "BoxCollider",
+		"Center": {
+			"X": 192.2154541015625,
+			"Y": 168.4326171875,
+			"Z": 1.1224365234375
+		},
+		"ContactOffset": 0.0,
+		"Size": {
+			"X": 795.580322265625,
+			"Y": 384.974365234375,
+			"Z": 104.356201171875
+		}
+	}
+]
+}

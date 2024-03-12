@@ -1,0 +1,141 @@
+{
+	"ID": "e2c5cfd4420ff6aa9480d9893c1a5da2",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "a4289da84e1eebf4f02bf9bb0cd9b206",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "00000000000000000000000000000000",
+		"Name": "curved hedge",
+		"Model": "e85997124970835536ebf5b91a579b96",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "d2d5919846411eed8f1fc1a65c0dd7da",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "a4289da84e1eebf4f02bf9bb0cd9b206",
+		"Name": "BoxCollider",
+		"Transform": {
+			"Translation": {
+				"X": -196.14280700683598,
+				"Y": 0.0,
+				"Z": -117.07951354980468
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.11930117756128313,
+				"Z": 0.0,
+				"W": 0.992858111858368
+			}
+		},
+		"Center": {
+			"X": 68.86669921875,
+			"Y": 170.789794921875,
+			"Z": -78.185791015625
+		},
+		"Size": {
+			"X": 123.917724609375,
+			"Y": 373.87841796875,
+			"Z": 310.66845703125
+		}
+	},
+	{
+		"ID": "7fdf2c9e48fced43f540a18ba0577734",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "a4289da84e1eebf4f02bf9bb0cd9b206",
+		"Name": "BoxCollider 0",
+		"Transform": {
+			"Translation": {
+				"X": -5.3063812255859379,
+				"Y": 0.0,
+				"Z": 110.4839324951172
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.3653974235057831,
+				"Z": 0.0,
+				"W": 0.9308516383171082
+			}
+		},
+		"Center": {
+			"X": 68.86669921875,
+			"Y": 170.789794921875,
+			"Z": -78.185791015625
+		},
+		"Size": {
+			"X": 137.917724609375,
+			"Y": 373.87841796875,
+			"Z": 310.66845703125
+		}
+	},
+	{
+		"ID": "3e12930344b2c915ff4e8db87f30395e",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "a4289da84e1eebf4f02bf9bb0cd9b206",
+		"Name": "BoxCollider 1",
+		"Transform": {
+			"Translation": {
+				"X": 256.7145690917969,
+				"Y": 0.0,
+				"Z": 215.87051391601566
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.6001018285751343,
+				"Z": 0.0,
+				"W": 0.7999236583709717
+			}
+		},
+		"Center": {
+			"X": 68.86669921875,
+			"Y": 170.789794921875,
+			"Z": -78.185791015625
+		},
+		"Size": {
+			"X": 139.917724609375,
+			"Y": 373.87841796875,
+			"Z": 310.66845703125
+		}
+	}
+]
+}

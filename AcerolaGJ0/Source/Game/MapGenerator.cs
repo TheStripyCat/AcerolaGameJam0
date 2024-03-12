@@ -29,12 +29,14 @@ public class MapGenerator : Script
         playerSpawnTile = 1;
 
         //choosing a place an spawning the tile with the portal
-        weirdTileSpawn = RandomUtil.Random.Next(0, 8);
+        weirdTileSpawn = RandomUtil.Random.Next(0, 9);
         Debug.Log(weirdTileSpawn);
-        weirdTile = weirdTiles[RandomUtil.Random.Next(0, weirdTiles.Count-1)];
+        weirdTile = weirdTiles[RandomUtil.Random.Next(0, weirdTiles.Count)];
         spawnedTile = PrefabManager.SpawnPrefab(weirdTile, tileSpawns[weirdTileSpawn]);
+        PluginManager.GetPlugin<PortalPlugin>().odditiesMapSpawns.Add(3);
+        PluginManager.GetPlugin<PortalPlugin>().odditiesTilePlacement.Add(3);
         //rotate spawned tile to add some randomness
-        spawnedTile.RotateAround(spawnedTile.Position, Vector3.Up, angles[RandomUtil.Random.Next(0, 2)]);
+        spawnedTile.RotateAround(spawnedTile.Position, Vector3.Up, angles[RandomUtil.Random.Next(0, 3)]);
         if (playerSpawnTile == weirdTileSpawn)
         {
             player.Position = spawnedTile.GetScript<TileScript>().playerSpawn.Position;
@@ -44,7 +46,7 @@ public class MapGenerator : Script
         for (int t = 0; t < 3; t++)
         {
             isRepeating = false;
-            tileOption = RandomUtil.Random.Next(0, 8);
+            tileOption = RandomUtil.Random.Next(0, 9);
             if (tileOption != weirdTileSpawn)
             {
                 for (int i = 0; i < tilesWithOdditites.Count; i++)
@@ -69,17 +71,20 @@ public class MapGenerator : Script
         {
             if (i != weirdTileSpawn)
             {
-                tile = tiles[RandomUtil.Random.Next(0, tiles.Count - 1)];
+                tile = tiles[RandomUtil.Random.Next(0, tiles.Count)];
                 spawnedTile = PrefabManager.SpawnPrefab(tile, tileSpawns[i]);
-                spawnedTile.RotateAround(spawnedTile.Position, Vector3.Up, angles[RandomUtil.Random.Next(0,2)]);
-                
+                spawnedTile.RotateAround(spawnedTile.Position, Vector3.Up, angles[RandomUtil.Random.Next(0,3)]);
+                PluginManager.GetPlugin<PortalPlugin>().odditiesMapSpawns.Add(3);
+                PluginManager.GetPlugin<PortalPlugin>().odditiesTilePlacement.Add(3);
+
                 //spawn oddities                
                 for (int t = 0; t < 3; t++)
                 {
                     if (tilesWithOdditites[t] == i)
                     {
-                        odditySpawn = RandomUtil.Random.Next(0, 2);
-                        PrefabManager.SpawnPrefab(oddities[t], spawnedTile.GetScript<TileScript>().odditySpawns[odditySpawn].Position);                        
+                        odditySpawn = RandomUtil.Random.Next(0, 3);
+                        PrefabManager.SpawnPrefab(oddities[t], spawnedTile.GetScript<TileScript>().odditySpawns[odditySpawn].Position);
+                        PluginManager.GetPlugin<PortalPlugin>().odditiesMapSpawns[i] = t;
                     }
                 }
 
@@ -91,7 +96,10 @@ public class MapGenerator : Script
             }
             
         }
-        
+        Debug.Log("tile " + tilesWithOdditites[0]);
+        Debug.Log("tile " + tilesWithOdditites[1]);
+        Debug.Log("tile " + tilesWithOdditites[2]);
+                        
     }
     
     /// <inheritdoc/>

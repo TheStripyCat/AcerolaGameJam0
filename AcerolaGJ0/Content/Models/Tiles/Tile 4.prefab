@@ -822,7 +822,11 @@
 		"TypeName": "Game.DoorScript",
 		"ParentID": "c90d1dad4c6770b3fc2551a61fc6a488",
 		"V": {
-	"interractionTrigger": "95efc7f047ad625d1f0dc3a7b4442884"
+	"interractionTrigger": "95efc7f047ad625d1f0dc3a7b4442884",
+	"openPrompt": "c40be3c547832bcd67f8728cbec50202",
+	"closePrompt": "c5c6815c42bea92f003b17864e8f2a97",
+	"openDoorSound": "fc7d90fb40096948bbd297b31d8485b0",
+	"closeDoorSound": "5de9a4fb49290dbf88a503a79a459dc0"
 }
 	},
 	{
@@ -952,6 +956,12 @@
 			"Y": 200.0,
 			"Z": 360.0
 		}
+	},
+	{
+		"ID": "d2b3cea64a890547c51f49a71b8d6b97",
+		"TypeName": "FlaxEngine.AudioSource",
+		"ParentID": "c90d1dad4c6770b3fc2551a61fc6a488",
+		"Name": "AudioSource"
 	},
 	{
 		"ID": "d368262741544884da7c878787c90469",

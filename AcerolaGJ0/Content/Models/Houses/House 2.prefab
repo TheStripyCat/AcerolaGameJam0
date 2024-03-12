@@ -1,7 +1,7 @@
 {
 	"ID": "fcd803f84937d50d383cd3b0998c428f",
 	"TypeName": "FlaxEngine.Prefab",
-	"EngineBuild": 6407,
+	"EngineBuild": 6408,
 	"Data": [
 	{
 		"ID": "713081274fab945c867039a4a80ce7dd",
@@ -72,6 +72,12 @@
 		"ID": "d49fe926448b0f77916bfe9e0d2322ec",
 		"PrefabID": "19aede724221f53c5513be975a0e2562",
 		"PrefabObjectID": "5aaf8d564f93fd69345300aac2eac0f1",
+		"ParentID": "080810204011225a2a11b8aa81b68080"
+	},
+	{
+		"ID": "40dbb413401c393c64e40c81fb3796b7",
+		"PrefabID": "19aede724221f53c5513be975a0e2562",
+		"PrefabObjectID": "03b56bbc42e938f7d37910b6d1f65359",
 		"ParentID": "080810204011225a2a11b8aa81b68080"
 	},
 	{
