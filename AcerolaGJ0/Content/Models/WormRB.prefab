@@ -1,0 +1,58 @@
+{
+	"ID": "c3285b744a2225549ab693a2b1cc4791",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "f23b632948771c57a23260937bf56bbb",
+		"TypeName": "FlaxEngine.RigidBody",
+		"Name": "WormRB",
+		"Mass": 0.5
+	},
+	{
+		"ID": "4b2ba5ae484029a6e5778cb549a77afa",
+		"TypeName": "Game.WormScript",
+		"ParentID": "f23b632948771c57a23260937bf56bbb",
+		"V": {
+	"wormModel": "91b879fc4a9259614bbdb4a55dad5d23"
+}
+	},
+	{
+		"ID": "f9bae15a499b680bba82629a2b905873",
+		"TypeName": "FlaxEngine.CapsuleCollider",
+		"ParentID": "f23b632948771c57a23260937bf56bbb",
+		"Name": "CapsuleCollider",
+		"Transform": {
+			"Scale": {
+				"X": 5.0,
+				"Y": 5.0,
+				"Z": 5.0
+			}
+		}
+	},
+	{
+		"ID": "91b879fc4a9259614bbdb4a55dad5d23",
+		"TypeName": "FlaxEngine.AnimatedModel",
+		"ParentID": "f23b632948771c57a23260937bf56bbb",
+		"Name": "worm",
+		"SkinnedModel": "e2a609fa4bdb0b5b80bf5d8128adf153",
+		"AnimationGraph": "a38026e6484a2575187a008c55f762c3",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	}
+]
+}

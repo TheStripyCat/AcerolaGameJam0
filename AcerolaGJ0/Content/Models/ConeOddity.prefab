@@ -9,6 +9,15 @@
 		"Name": "ConeOddity"
 	},
 	{
+		"ID": "8178a50441074bef644acfaeee5448a6",
+		"TypeName": "Game.OdditiesScript",
+		"ParentID": "4bc0315a47faea73fabc7d9b6bbb8ff2",
+		"V": {
+	"oddityListNumber": 1,
+	"oddityCollider": "280fa81744be2748a8f6de975062594f"
+}
+	},
+	{
 		"ID": "a168561043f82372c47af98f65159f26",
 		"TypeName": "FlaxEngine.StaticModel",
 		"ParentID": "4bc0315a47faea73fabc7d9b6bbb8ff2",
@@ -60,6 +69,23 @@
 				}
 			]
 		}
+	},
+	{
+		"ID": "280fa81744be2748a8f6de975062594f",
+		"TypeName": "FlaxEngine.CapsuleCollider",
+		"ParentID": "4bc0315a47faea73fabc7d9b6bbb8ff2",
+		"Name": "CapsuleCollider",
+		"Transform": {
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.7071068286895752,
+				"W": 0.7071068286895752
+			}
+		},
+		"IsTrigger": true,
+		"Radius": 300.0,
+		"Height": 200.0
 	}
 ]
 }

@@ -1,0 +1,101 @@
+{
+	"ID": "a5a932a54b1133e32ecaef92e90d43ab",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6408,
+	"Data": [
+	{
+		"ID": "f8af423a437a8b56d70ecbbfd0341464",
+		"TypeName": "FlaxEngine.RigidBody",
+		"Name": "ManRB",
+		"Mass": 880.012451171875,
+		"Constraints": 40
+	},
+	{
+		"ID": "ac7c267b4c5f0b0e6fe63183d93cb4c5",
+		"TypeName": "Game.CrazyMan",
+		"ParentID": "f8af423a437a8b56d70ecbbfd0341464",
+		"V": {
+	"laugh": "0ca6679640d25742c7fa05a13609c153",
+	"nonono": "208446f048408b46450215bc6c49ca8c",
+	"crazyTalk": "e4d5c24541d2e9e8850b37a74d798994",
+	"manSpeak": "24555f5b46a7b73775199092e1f37bc3",
+	"rotationSpeed": 5.0
+}
+	},
+	{
+		"ID": "c05303e24f812eb6e01fa8a9bbe2c494",
+		"TypeName": "FlaxEngine.AnimatedModel",
+		"ParentID": "f8af423a437a8b56d70ecbbfd0341464",
+		"Name": "a man",
+		"Transform": {
+			"Scale": {
+				"X": 0.699999988079071,
+				"Y": 0.699999988079071,
+				"Z": 0.699999988079071
+			}
+		},
+		"SkinnedModel": "78779edf49ae4c70750056a7ddb4ca57",
+		"AnimationGraph": "99513bbd41589c82346d7fbf5618af2d",
+		"RootMotionTarget": "f8af423a437a8b56d70ecbbfd0341464",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "2ba5671e4be045c7003b998aae4c9c65",
+		"TypeName": "FlaxEngine.CapsuleCollider",
+		"ParentID": "f8af423a437a8b56d70ecbbfd0341464",
+		"Name": "CapsuleCollider",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": 126.10604858398438,
+				"Z": 0.0
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.7071068286895752,
+				"W": 0.7071068286895752
+			}
+		},
+		"Radius": 35.0,
+		"Height": 182.0
+	},
+	{
+		"ID": "24555f5b46a7b73775199092e1f37bc3",
+		"TypeName": "FlaxEngine.AudioSource",
+		"ParentID": "f8af423a437a8b56d70ecbbfd0341464",
+		"Name": "AudioSource",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": 147.67257690429688,
+				"Z": 0.0
+			}
+		},
+		"MinDistance": 300.0,
+		"Loop": true,
+		"PlayOnStart": true
+	}
+]
+}

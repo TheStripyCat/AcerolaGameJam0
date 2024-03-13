@@ -9,8 +9,8 @@ namespace Game;
 /// </summary>
 public class PortalPlugin : GamePlugin
 {
-    public bool inPortalSpace, inOtherWorld;
-    public Vector3 portalPosition, portalExit;
+    public bool inPortalSpace, inOtherWorld, youDidIt;
+    public Vector3 portalPosition, portalExit, playerSpawnPosition;
     public Actor portalSpawnEmpty;
     public List<int> odditiesMapSpawns;
     public List<int> odditiesTilePlacement;

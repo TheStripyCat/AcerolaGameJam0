@@ -12,9 +12,10 @@ public class MapGenerator : Script
     [Serialize, ShowInEditor] List<Actor> tileSpawns;
     [Serialize, ShowInEditor] List<Prefab> tiles, weirdTiles, oddities;
     [Serialize, ShowInEditor] Actor player;
+    [Serialize, ShowInEditor] Prefab crazyMan;
     private int weirdTileSpawn, playerSpawnTile, tileOption, odditySpawn;
     private Prefab weirdTile, tile;
-    private Actor spawnedTile;
+    private Actor spawnedTile, manSpawned;
     private List<int> angles, tilesWithOdditites;
     private bool isRepeating;
 
@@ -40,6 +41,14 @@ public class MapGenerator : Script
         if (playerSpawnTile == weirdTileSpawn)
         {
             player.Position = spawnedTile.GetScript<TileScript>().playerSpawn.Position;
+        }
+        else
+        {
+            if (RandomUtil.Random.Next(1, 3) == 1)
+            {
+                manSpawned = PrefabManager.SpawnPrefab(crazyMan, spawnedTile.GetScript<TileScript>().playerSpawn.Position);
+                manSpawned.RotateAround(spawnedTile.Position, Vector3.Up, RandomUtil.Random.Next(0, 350));
+            }
         }
         //choosing which tiles will have oddities
         tilesWithOdditites = new List<int>();
@@ -92,6 +101,15 @@ public class MapGenerator : Script
                 if (playerSpawnTile == i)
                 {
                     player.Position = spawnedTile.GetScript<TileScript>().playerSpawn.Position;
+                    PluginManager.GetPlugin<PortalPlugin>().playerSpawnPosition = player.Position;
+                }
+                else
+                {
+                    if (RandomUtil.Random.Next(1,3) == 1)
+                    {
+                        manSpawned = PrefabManager.SpawnPrefab(crazyMan, spawnedTile.GetScript<TileScript>().playerSpawn.Position);
+                        manSpawned.RotateAround(spawnedTile.Position, Vector3.Up, RandomUtil.Random.Next(0, 350));
+                    }
                 }
             }
             

@@ -9,6 +9,14 @@
 		"Name": "CapsuleOddity"
 	},
 	{
+		"ID": "10e2cfb44f0d4ea775d683a9b9246364",
+		"TypeName": "Game.OdditiesScript",
+		"ParentID": "5d79a6da43377776aea382887a4b3455",
+		"V": {
+	"oddityCollider": "8c54d41f4cee655818f2cf9a3b8a461c"
+}
+	},
+	{
 		"ID": "05baaad3453cf3ca9fcb2f9572b8668d",
 		"TypeName": "FlaxEngine.StaticModel",
 		"ParentID": "5d79a6da43377776aea382887a4b3455",
@@ -36,6 +44,28 @@
 				}
 			]
 		}
+	},
+	{
+		"ID": "8c54d41f4cee655818f2cf9a3b8a461c",
+		"TypeName": "FlaxEngine.CapsuleCollider",
+		"ParentID": "5d79a6da43377776aea382887a4b3455",
+		"Name": "CapsuleCollider",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": 18.38766098022461,
+				"Z": 0.0
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.7071068286895752,
+				"W": 0.7071068286895752
+			}
+		},
+		"IsTrigger": true,
+		"Radius": 300.0,
+		"Height": 200.0
 	}
 ]
 }

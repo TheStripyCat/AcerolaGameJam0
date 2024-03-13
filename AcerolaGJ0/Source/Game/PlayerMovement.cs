@@ -11,41 +11,97 @@ namespace Game;
 public class PlayerMovement : Script
 {
     CharacterController player;
-    [Serialize, ShowInEditor] Actor camera, playerModel;
+    [Serialize, ShowInEditor] Actor camera, playerModel, worms;
     [Serialize, ShowInEditor] Prefab portalPrefab;
-    private AnimGraphParameter isRunning, isWalking, isReading;
+    [Serialize, ShowInEditor] AnimatedModel vines1, vines2;
+    private AnimGraphParameter isRunning, isWalking, isReading, insaneRun, isRestoringSanity, vines1Mad, vines2Mad;
     [Serialize, ShowInEditor] AudioSource playerAudioSource;
+    [Serialize, ShowInEditor] AudioClip incantation, madness;
 
     public Float2 camVertMinMax;
+    public float insanity, maxInsaneAngle, insanitySpeed;
 
     public float rotationSpeed, playerSpeed, mouseSensitivity, grav;
-    private float hInput, vInput, hLookDir, vLookDir, targetAngle, incantationTimer, insanity, maxInsaneAngle, camZrot;
+    private float hInput, vInput, hLookDir, vLookDir, targetAngle, incantationTimer, sanityRestoringTimer, camZrot;
     private Vector3 viewDir, camForward, movement, inputDir;
     private bool portalSpawned, camZup;
     
     /// <inheritdoc/>
     public override void OnStart()
     {
+        Screen.CursorLock = CursorLockMode.Locked;
+        Screen.CursorVisible = false;
         player = Actor as CharacterController;
         isRunning = playerModel.As<AnimatedModel>().GetParameter("isRunning");
         isWalking = playerModel.As<AnimatedModel>().GetParameter("isWalking");
-        isReading = playerModel.As<AnimatedModel>().GetParameter("isReading");        
+        isReading = playerModel.As<AnimatedModel>().GetParameter("isReading");
+        insaneRun = playerModel.As<AnimatedModel>().GetParameter("insane");
+        isRestoringSanity = playerModel.As<AnimatedModel>().GetParameter("restoringSanity");
+        vines1Mad = vines1.GetParameter("tooMad");
+        vines2Mad = vines2.GetParameter("tooMad");
         incantationTimer = 0f;
-        insanity = 0f; maxInsaneAngle = 0f;
+        insanity = 0f; maxInsaneAngle = 0f; insanitySpeed = 0.0002f;
     }
     
     
     public override void OnUpdate()
     {
-        Screen.CursorLock = CursorLockMode.Locked;
-        Screen.CursorVisible = false;
-
+        
         //get direction of the camera
         viewDir = player.Position - new Vector3(camera.Position.X, player.Position.Y, camera.Position.Z);
         camForward = viewDir.Normalized;
 
-        insanity += 0.0001f* Time.DeltaTime;
-        
+        if (insanity < 0.15f)
+        {
+            insanity += insanitySpeed * Time.DeltaTime;
+        }
+        if (maxInsaneAngle < 20f)
+        {
+            maxInsaneAngle += 0.00001f;
+        }
+
+        //set parameter for insane running animation
+        if (insanity * 5f > 1)
+        {
+            insaneRun.Value = 1f;
+        }
+        else
+        {
+            insaneRun.Value = insanity * 8f;
+        } 
+        //enable worms
+        if ((insanity >= 0.05f)&&(!worms.IsActive))
+        {
+            worms.IsActive = true;
+            playerAudioSource.Clip = madness;
+            playerAudioSource.IsLooping = true;
+            if (!Input.GetKey(KeyboardKeys.R))
+            {
+                playerAudioSource.Play();
+            }
+                      
+        }
+        else if ((insanity < 0.05f)&&(worms.IsActive))
+        {
+            worms.IsActive = false;
+            if (playerAudioSource.Clip == madness)
+            {
+                playerAudioSource.Stop();
+                playerAudioSource.IsLooping = false;
+            }
+        }
+        //enable vines
+        if (insanity >= 0.085f)
+        {
+            vines1Mad.Value = true;
+            vines2Mad.Value = true;
+        }
+        else if (insanity < 0.085f)
+        {
+            vines1Mad.Value = false;
+            vines2Mad.Value = false;
+        }
+
         //calculate camera Z rotation (depends on insanity)
         if ((camZup) && (camZrot < maxInsaneAngle))
         {
@@ -76,13 +132,15 @@ public class PlayerMovement : Script
         movement = new Vector3(inputDir.X, grav, inputDir.Z) * playerSpeed;
 
         //reading incantation and spawning the portal
-        if (Input.GetKey(KeyboardKeys.R))
+        if ((Input.GetKey(KeyboardKeys.R))&&(!portalSpawned))
         {
             playerSpeed = 0f;
             isReading.Value = true;
             isRunning.Value = false;
+            isRestoringSanity.Value = false;
             isWalking.Value = false;            
             incantationTimer += Time.DeltaTime;
+            playerAudioSource.Clip = incantation;
             playerAudioSource.Play();
             if (incantationTimer >= 4.2f)
             {
@@ -91,18 +149,43 @@ public class PlayerMovement : Script
                 {
                     PrefabManager.SpawnPrefab(portalPrefab, PluginManager.GetPlugin<PortalPlugin>().portalPosition, PluginManager.GetPlugin<PortalPlugin>().portalSpawnEmpty.Orientation);
                     portalSpawned = true;
-                    Debug.Log("portal spawned");
+                    insanitySpeed += 0.002f;
+                    maxInsaneAngle += 5f;
+                    insanity += 0.02f;
+                    if (maxInsaneAngle > 20)
+                    {
+                        maxInsaneAngle = 20;
+                    }
+
+
                 }
+            }
+        }
+        //restoring sanity
+        else if (Input.GetKey(KeyboardKeys.F))
+        {
+            playerSpeed = 0f;
+            isRestoringSanity.Value = true;
+            isRunning.Value = false;
+            isWalking.Value = false;
+            isReading.Value = false;
+            sanityRestoringTimer += Time.DeltaTime;
+            if (sanityRestoringTimer >= 5.3f)
+            {
+                insanity = 0.01f; maxInsaneAngle = 1f; insanitySpeed = 0.0002f; camZrot = 0f;
+                isRestoringSanity.Value = false;
             }
         }
         
         //rotate the character and set speed
         else if (inputDir != Vector3.Zero && Input.GetKey(KeyboardKeys.Shift))
         {
-            playerAudioSource.Stop();
+            
             incantationTimer = 0f;
+            sanityRestoringTimer = 0f;
             playerSpeed = 3f;
             isReading.Value = false;
+            isRestoringSanity.Value = false;
             isRunning.Value = false;
             isWalking.Value = true;
             targetAngle = Mathf.Atan2(inputDir.X, inputDir.Z) * Mathf.RadiansToDegrees;
@@ -110,10 +193,12 @@ public class PlayerMovement : Script
         }
         else if (inputDir != Vector3.Zero)
         {
-            playerAudioSource.Stop();
+            
             incantationTimer = 0f;
+            sanityRestoringTimer = 0f;
             playerSpeed = 7f;
             isReading.Value = false;
+            isRestoringSanity.Value = false;
             isWalking.Value = false;
             isRunning.Value = true;
             targetAngle = Mathf.Atan2(inputDir.X, inputDir.Z) * Mathf.RadiansToDegrees;
@@ -121,9 +206,14 @@ public class PlayerMovement : Script
         }
         else
         {
-            playerAudioSource.Stop();
+            if (playerAudioSource.Clip == incantation)
+            {
+                playerAudioSource.Stop();
+            }
             incantationTimer = 0f;
+            sanityRestoringTimer = 0f;
             isReading.Value = false;
+            isRestoringSanity.Value = false;
             isRunning.Value = false;
             isWalking.Value = false;
         }

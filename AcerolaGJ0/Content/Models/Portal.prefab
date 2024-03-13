@@ -86,7 +86,8 @@
 		"ParentID": "fccd97b841c8e5697ca463b18c6b3355",
 		"Name": "AudioSource",
 		"Clip": "84f6242641cf0715772b1089c0c41ab3",
-		"PlayOnStart": true
+		"PlayOnStart": true,
+		"AllowSpatialization": false
 	}
 ]
 }

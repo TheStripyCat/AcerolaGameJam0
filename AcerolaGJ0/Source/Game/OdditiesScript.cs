@@ -10,26 +10,47 @@ namespace Game;
 public class OdditiesScript : Script
 {
     public int oddityListNumber;
+    [Serialize, ShowInEditor] Collider oddityCollider;
     public override void OnStart()
     {
         // Here you can add code that needs to be called when script is created, just before the first game update
     }
-    
+
     /// <inheritdoc/>
     public override void OnEnable()
     {
-        // Here you can add code that needs to be called when script is enabled (eg. register for events)
+        if (oddityCollider != null)
+        {
+            oddityCollider.TriggerEnter += OddityClose;
+        }
     }
+        
 
     /// <inheritdoc/>
     public override void OnDisable()
     {
-        // Here you can add code that needs to be called when script is disabled (eg. unregister from events)
+        if (oddityCollider != null)
+        {
+            oddityCollider.TriggerEnter -= OddityClose;
+        }
     }
 
     /// <inheritdoc/>
     public override void OnUpdate()
     {
         // Here you can add code that needs to be called every frame
+    }
+    private void OddityClose(PhysicsColliderActor other)
+    {
+        if (other.HasTag("Player"))
+        {
+            other.GetScript<PlayerMovement>().insanitySpeed += 0.001f;
+            other.GetScript<PlayerMovement>().insanity += 0.01f;
+            other.GetScript<PlayerMovement>().maxInsaneAngle += 2f;
+            if (other.GetScript<PlayerMovement>().maxInsaneAngle > 20)
+            {
+                other.GetScript<PlayerMovement>().maxInsaneAngle = 20;
+            }
+        }
     }
 }

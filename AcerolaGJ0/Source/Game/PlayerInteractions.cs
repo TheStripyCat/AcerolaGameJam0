@@ -12,11 +12,13 @@ public class PlayerInteractions : Script
     [Serialize, ShowInEditor] Actor rayCastOrigin, camera;
     [Serialize, ShowInEditor] MaterialBase highlightedTile, tileMaterial;
     [Serialize, ShowInEditor] UIControl pickUpPrompt, placePrompt, victoryPrompt;
+    [Serialize, ShowInEditor] AudioSource victorySoundAS, otherWorldSound;
     private Actor currentTile, lastTile, oddity;
     private RayCastHit hit;
     private Vector3 viewDir;
-    private bool handsFull;
+    private bool handsFull, youWon;
     private int portalTileNumber, listsMatch;
+    private float timer;
 
     public override void OnStart()
     {
@@ -25,7 +27,7 @@ public class PlayerInteractions : Script
     
     public override void OnUpdate()
     {
-        viewDir = rayCastOrigin.Position - camera.Position;
+        viewDir = rayCastOrigin.Position - camera.Parent.Position;
         viewDir = viewDir.Normalized;
 
         if (Physics.RayCast(rayCastOrigin.Position, viewDir, out hit, 350f))
@@ -64,7 +66,14 @@ public class PlayerInteractions : Script
                         
                         if (listsMatch == 9)
                         {
-                            victoryPrompt.IsActive = true;
+                            victoryPrompt.IsActive = true;                            
+                            victorySoundAS.Play();
+                            PluginManager.GetPlugin<PortalPlugin>().inOtherWorld = false;
+                            PluginManager.GetPlugin<PortalPlugin>().youDidIt = true;
+                            Actor.Position = PluginManager.GetPlugin<PortalPlugin>().playerSpawnPosition;
+                            youWon = true;
+                            Debug.Log("victory");
+                            
                         }
                         else
                         {
@@ -100,6 +109,14 @@ public class PlayerInteractions : Script
                 pickUpPrompt.IsActive = false;
             }
             
+        }
+        if (youWon)
+        {
+            timer += Time.DeltaTime;
+        }
+        if (timer > 5)
+        {
+            Engine.RequestExit();
         }
     }
 }
