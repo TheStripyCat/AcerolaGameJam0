@@ -55,6 +55,8 @@ public class PlayerInteractions : Script
                         handsFull = false;
                         PluginManager.GetPlugin<PortalPlugin>().odditiesTilePlacement[portalTileNumber] = 
                             oddity.GetScript<OdditiesScript>().oddityListNumber;
+                        oddity.GetScript<OdditiesScript>().tileOccupied = portalTileNumber;
+
                         for (int i = 0; i<9;  i++)
                         {
                             if (PluginManager.GetPlugin<PortalPlugin>().odditiesTilePlacement[i] == PluginManager.GetPlugin<PortalPlugin>().odditiesMapSpawns[i])
@@ -101,6 +103,11 @@ public class PlayerInteractions : Script
                 {
                     oddity = hit.Collider.Parent;                    
                     oddity.IsActive = false;
+                    if (oddity.GetScript<OdditiesScript>().tileOccupied != 3)
+                    {
+                        PluginManager.GetPlugin<PortalPlugin>().odditiesTilePlacement[oddity.GetScript<OdditiesScript>().tileOccupied] = 3;
+                        oddity.GetScript<OdditiesScript>().tileOccupied = 3;
+                    }
                     handsFull = true;
                 }
             }

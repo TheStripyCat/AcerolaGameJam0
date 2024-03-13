@@ -9,7 +9,7 @@ namespace Game;
 /// </summary>
 public class OdditiesScript : Script
 {
-    public int oddityListNumber;
+    public int oddityListNumber, tileOccupied;
     [Serialize, ShowInEditor] Collider oddityCollider;
     public override void OnStart()
     {
@@ -23,6 +23,7 @@ public class OdditiesScript : Script
         {
             oddityCollider.TriggerEnter += OddityClose;
         }
+        tileOccupied = 3;
     }
         
 
