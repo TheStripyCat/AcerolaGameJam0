@@ -5148,6 +5148,186 @@
 		"ParentID": "a1609865422dabd33ded6c9cd510ef47"
 	},
 	{
+		"ID": "53417515472588354f9709a9dbc017f5",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "34e06e06403e96a23fcbf89011657cd2",
+		"Name": "simple chair 6",
+		"Transform": {
+			"Translation": {
+				"X": 287.80029296875,
+				"Y": 10.0,
+				"Z": 12.662055969238282
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": -0.9200323224067688,
+				"Z": 0.0,
+				"W": -0.39184266328811648
+			}
+		},
+		"Model": "7d1c65474754da5d1f1beea54c6fb43f",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "b5b6d1154f7703f8a4232490632357ef",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "34e06e06403e96a23fcbf89011657cd2",
+		"Name": "simple chair 7",
+		"Transform": {
+			"Translation": {
+				"X": 24.4615478515625,
+				"Y": 10.0,
+				"Z": 356.9347839355469
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": -0.9200323224067688,
+				"Z": 0.0,
+				"W": -0.39184266328811648
+			}
+		},
+		"Model": "7d1c65474754da5d1f1beea54c6fb43f",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "283104384002ef7381ef3697921509ba",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "34e06e06403e96a23fcbf89011657cd2",
+		"Name": "simple chair 8",
+		"Transform": {
+			"Translation": {
+				"X": 6.5606842041015629,
+				"Y": 10.0,
+				"Z": 78.3438720703125
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.8386704921722412,
+				"Z": 0.0,
+				"W": 0.5446391701698303
+			}
+		},
+		"Model": "7d1c65474754da5d1f1beea54c6fb43f",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "241dfa6b430a0369e440ad8fc82145be",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "34e06e06403e96a23fcbf89011657cd2",
+		"Name": "simple chair 9",
+		"Transform": {
+			"Translation": {
+				"X": 126.78421020507813,
+				"Y": 10.0,
+				"Z": 6.473873138427734
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": -0.8085642457008362,
+				"Z": 0.0,
+				"W": 0.5884079933166504
+			}
+		},
+		"Model": "7d1c65474754da5d1f1beea54c6fb43f",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "1f5739ca444e572e941f2b84f1e0516e",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "34e06e06403e96a23fcbf89011657cd2",
+		"Name": "simple chair 10",
+		"Transform": {
+			"Translation": {
+				"X": 349.11712646484377,
+				"Y": 10.0,
+				"Z": 353.28271484375
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.5224984288215637,
+				"Z": 0.0,
+				"W": 0.8526402711868286
+			}
+		},
+		"Model": "7d1c65474754da5d1f1beea54c6fb43f",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "ef0c732744e3d79d94c023b925ca198a",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "34e06e06403e96a23fcbf89011657cd2",
+		"Name": "simple chair 11",
+		"Transform": {
+			"Translation": {
+				"X": 413.87615966796877,
+				"Y": 10.0,
+				"Z": -41.8238525390625
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": -0.3338068723678589,
+				"Z": 0.0,
+				"W": 0.9426414966583252
+			}
+		},
+		"Model": "7d1c65474754da5d1f1beea54c6fb43f",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
 		"ID": "63e1e7264e11ccf91c04a0b6dd4433e8",
 		"TypeName": "FlaxEngine.BoxCollider",
 		"ParentID": "74871ffe40f00a4491a3f481d890bda7",

@@ -10,6 +10,7 @@ namespace Game;
 public class PortalTiles : Script
 {
     public int portalTileNumber;
+    public bool occupied;
     public override void OnStart()
     {
         // Here you can add code that needs to be called when script is created, just before the first game update

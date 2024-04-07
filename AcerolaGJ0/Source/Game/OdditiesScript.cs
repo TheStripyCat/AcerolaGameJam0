@@ -13,7 +13,7 @@ public class OdditiesScript : Script
     [Serialize, ShowInEditor] Collider oddityCollider;
     public override void OnStart()
     {
-        // Here you can add code that needs to be called when script is created, just before the first game update
+        
     }
 
     /// <inheritdoc/>
@@ -23,7 +23,7 @@ public class OdditiesScript : Script
         {
             oddityCollider.TriggerEnter += OddityClose;
         }
-        tileOccupied = 3;
+        tileOccupied = 9;
     }
         
 

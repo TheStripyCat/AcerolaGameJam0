@@ -44,7 +44,7 @@ public class PlayerInteractions : Script
                     lastTile.As<StaticModel>().SetMaterial(0, tileMaterial);                    
                 }
                 lastTile = currentTile;
-                if (handsFull)
+                if ((handsFull) && (currentTile.GetScript<PortalTiles>().occupied == false))
                 {
                     placePrompt.IsActive = true;
                     //place oddity on the tile
@@ -52,7 +52,9 @@ public class PlayerInteractions : Script
                     {
                         oddity.Position = currentTile.Position + Vector3.Up * 25f;
                         oddity.IsActive = true;
+                        oddity.SetParent(currentTile, worldPositionsStays: true, canBreakPrefabLink: false);
                         handsFull = false;
+                        currentTile.GetScript<PortalTiles>().occupied = true;
                         PluginManager.GetPlugin<PortalPlugin>().odditiesTilePlacement[portalTileNumber] = 
                             oddity.GetScript<OdditiesScript>().oddityListNumber;
                         oddity.GetScript<OdditiesScript>().tileOccupied = portalTileNumber;
@@ -96,6 +98,7 @@ public class PlayerInteractions : Script
                     currentTile = null;
                 }
             }
+            //looking at an oddity while not holding another oddity
             if ((hit.Collider.HasTag("oddity"))&&(!handsFull))
             {
                 pickUpPrompt.IsActive = true;
@@ -103,10 +106,13 @@ public class PlayerInteractions : Script
                 {
                     oddity = hit.Collider.Parent;                    
                     oddity.IsActive = false;
-                    if (oddity.GetScript<OdditiesScript>().tileOccupied != 3)
+                    if (oddity.GetScript<OdditiesScript>().tileOccupied != 9)
                     {
+                        oddity.Parent.GetScript<PortalTiles>().occupied = false;
+                        
                         PluginManager.GetPlugin<PortalPlugin>().odditiesTilePlacement[oddity.GetScript<OdditiesScript>().tileOccupied] = 3;
-                        oddity.GetScript<OdditiesScript>().tileOccupied = 3;
+                        oddity.GetScript<OdditiesScript>().tileOccupied = 9;
+
                     }
                     handsFull = true;
                 }

@@ -21,14 +21,17 @@ public class PlayerMovement : Script
     public Float2 camVertMinMax;
     public float insanity, maxInsaneAngle, insanitySpeed;
 
-    public float rotationSpeed, playerSpeed, mouseSensitivity, grav;
-    private float hInput, vInput, hLookDir, vLookDir, targetAngle, incantationTimer, sanityRestoringTimer, camZrot;
+    public float rotationSpeed, mouseSensitivity, grav;
+    private float hInput, vInput, hLookDir, vLookDir, playerSpeed, targetAngle, incantationTimer, sanityRestoringTimer, camZrot;
     private Vector3 viewDir, camForward, movement, inputDir;
     private bool portalSpawned, camZup;
+    private const float runningSpeed = 500f;
+    private const float walkingSpeed = 220f;
     
     /// <inheritdoc/>
     public override void OnStart()
     {
+        playerSpeed = runningSpeed;
         Screen.CursorLock = CursorLockMode.Locked;
         Screen.CursorVisible = false;
         player = Actor as CharacterController;
@@ -129,7 +132,8 @@ public class PlayerMovement : Script
         hInput = Input.GetAxis("Horizontal");
         vInput = Input.GetAxis("Vertical");
         inputDir = camForward * vInput + camera.Transform.Right * hInput;
-        movement = new Vector3(inputDir.X, grav, inputDir.Z) * playerSpeed;
+        inputDir = inputDir.Normalized;
+        movement += new Vector3(inputDir.X, grav, inputDir.Z) * playerSpeed * Time.DeltaTime;
 
         //reading incantation and spawning the portal
         if ((Input.GetKey(KeyboardKeys.R))&&(!portalSpawned))
@@ -183,7 +187,7 @@ public class PlayerMovement : Script
             
             incantationTimer = 0f;
             sanityRestoringTimer = 0f;
-            playerSpeed = 3f;
+            playerSpeed = walkingSpeed;
             isReading.Value = false;
             isRestoringSanity.Value = false;
             isRunning.Value = false;
@@ -196,7 +200,7 @@ public class PlayerMovement : Script
             
             incantationTimer = 0f;
             sanityRestoringTimer = 0f;
-            playerSpeed = 7f;
+            playerSpeed = runningSpeed;
             isReading.Value = false;
             isRestoringSanity.Value = false;
             isWalking.Value = false;
@@ -225,6 +229,7 @@ public class PlayerMovement : Script
         if (inputDir != Vector3.Zero)
         {
             player.Move(movement);
+            movement = Vector3.Zero;
         }
             
     }
